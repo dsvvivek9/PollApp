@@ -37,7 +37,7 @@ func handleRequests() {
 	mux.Handle("/api/getpollinfo", authenticatorMiddleware(http.HandlerFunc(getpollinfo)))
 	mux.Handle("/api/vote", authenticatorMiddleware(http.HandlerFunc(vote)))
 	mux.Handle("/api/getusers", authenticatorMiddleware(http.HandlerFunc(getusers)))
-	err := http.ListenAndServeTLS("localhost:10000", "./TLSfiles/localhost.crt", "./TLSfiles/localhost.key", mux)
+	err := http.ListenAndServeTLS(":10000", "./TLSfiles/localhost.crt", "./TLSfiles/localhost.key", mux)
 	fmt.Println(err)
 }
 
