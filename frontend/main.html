@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <title>PollApp</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/createpoll.css">
+    <link rel="stylesheet" href="./css/polllist.css">
+    <script src="./javascripts/getuserinfo.js"></script>
+    <script src="./javascripts/loginandsignup.js"></script>
+    <script src="./javascripts/createpoll.js"></script>
+    <script src="./javascripts/extractpolllist.js"></script>
+</head>
+<body>
+    <!-- if user is not logged in redirect him/her to login page -->
+    <script>checkForLogin();</script>
+    <!-- Header definition code -->
+    <header class="main-header">
+        <div class="main-header-logo">
+            <div class="main-header-title">PöLLAPP</div>
+        </div>
+        <a href="#" class="main-header-userinfo" onclick="getuserinfo();">
+            <img src="./images/userinfo.png" alt="userinfo" class="main-userinfo-image">
+        </a>
+    </header>
+    <!-- code for available poll list -->
+    <div class="main-body" id="main-body">
+        <div class="polllist-sidebar-main-body">
+            <div class="sidebar-title" onclick="fetchPollList();">
+                <span class="title-content">List of Polls</span>
+            </div>
+            <div class="sidebar-elements-window" id="sidebar-elements-window">
+                <div class="sidebar-elements">
+                    <span class="content">raaqdwf fwgwegg gerthert herjr qrwe fqwf    wfwsdwse</span>
+                </div>
+            </div>
+        </div>
+        <div class="polllist-content-main-body">
+            <div class="poll-title" id="poll-title">
+                <span class="title-content">Hidoafn adfoasjggoajdls</span>
+            </div>
+            <div class="poll-option-window" id="poll-option-window">
+                <div class="poll-elements">
+                    <div class="poll-options">
+                        <input type="radio" class="radio-buttons" id="option1" name="option1"></input>
+                        <label class="content" for="option1">raaqdwf fwgwegg gerthert herjr qrwe fqwf    wfwsdwse raaqdwf fwgwegg gerthert herjr qrwe fqwf    wfwsdwse</label>
+                    </div>
+                    <div class="poll-options-votes"><span class="content">100</span></div>
+                </div>
+            </div>
+            <div class="line-gap">
+                <hr>
+            </div>
+            <div class="vote-button" id="vote-button"onclick="vote();">
+                <span class="content">Vote</span>
+            </div>
+            <div class="polllist-error" id="polllist-error">
+            </div>
+        </div>
+    </div>
+    <script>fetchPollList();</script>
+    <!-- Code for List of Users voted popup window -->
+    <div class="userslist-window" id="userslist-window">
+        <div id="userslist-window-inside">
+            <span class="userslist-elements">Akshay</span>
+        </div>
+        <div class="userslist-window-close" onclick="closeUsersList();"><span class="content">Close</span></div>
+    </div>
+    <!-- Code for userinfo popup window -->
+    <div class="userinfo-window" id="userinfo-window">
+        <div class="userinfo-username" id="userinfo-username">
+        </div>
+        <div class="userinfo-created-polls" id="userinfo-created-polls">
+        </div>
+        <div class="close-userinfo-window">
+            <div class="line-gap">
+                <hr>
+            </div>
+            <div>
+                <a href="#" onclick="closeUserinfoWindow()"><div class="userinfo-close-button"><span class="userinfo-inline-text">Close</span></div></a>
+            </div>
+        </div>
+    </div>
+    <!-- code for createpoll button -->
+    <div class="createpoll-button" id="createpoll-button" onclick="openCreatePollWindow();">
+        <span class="add-symbol">+</span> 
+    </div>
+    <!-- code for createpoll popup -->
+    <div class="createpoll-main-body" id="createpoll-main-body">
+        <div class="createpoll-title">
+            <input class="createpoll-title-input" type="text" id="polltitle" placeholder="what is your poll title?"></input>
+        </div>
+        <div class="createpoll-options" id="createpoll-options">
+            <input class="createpoll-options-elements" onclick="addOrRemoveOptions();" placeholder="Type here options you want to add!"></input>
+            <input class="createpoll-options-elements" onclick="addOrRemoveOptions();" placeholder="Type here options you want to add!"></input>
+        </div>
+        <div class="line-gap">
+            <hr>
+        </div>
+        <div class="createpoll-window-buttons">
+            <span class="createpoll-discard-changes" onclick="discardChanges();">Discard</span>
+            <span class="createpoll-submit-button-text" onclick="createNewPoll();">Create Poll</span>
+        </div>
+        <div class="createpoll-error" id="createpoll-error">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+header {
+    heigth: 100px;
+    position: sticky;
+    padding: 0px;
+    background-color: rgb(119, 178, 214);
+}
+body {
+    background-color: #cfd6df;
+}
+.home-header {
+    height: 50px;
+}
+.home-body {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    height: 300px;
+    grid-template-columns: repeat(2,1fr);
+}
+.home-body-left {
+    padding: 150px 100px;
+    display: block;
+    grid-column: 1;
+}
+.home-body-title {
+    font-family: Optima;
+    font-size: 100px;
+    color: rgb(6, 22, 114);
+}
+.home-body-description {
+    font-size: 18px;
+}
+.home-body-right {
+    display: block;
+    grid-column: 2;
+    padding: 70px 50px;
+}
+.home-body-right-box {
+    border: solid 2px;
+    border-radius: 20px;
+    height: 300px;
+    width: 450px;
+    padding: 20px;
+}
+.login-form {
+    top: 0;
+    width: 100%;
+}
+.login-form-elements {
+    display: block;
+}
+.login-form-elements-child {
+    border-radius: 12px;
+    font-size: 17px;
+    padding: 14px 16px;
+    width: 400px;
+    margin: 6px;
+    text-align: center;
+}
+.submit-button, .submit-button-inside {
+    width: 435px;
+    cursor: pointer;
+}
+.submit-button-inside {
+    background-color: rgb(189, 219, 238);
+}
+.line-gap {
+    padding-left: 75px;
+    padding-right: 75px;
+}
+.signup-button {
+    display: block;
+    border-radius: 12px;
+    background-color: rgb(174, 236, 218);
+    height: 50px;
+    border: solid 1px black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.inline-text {
+    display: inline-block;
+    color: black;
+    line-height: 50px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* signup window configurations */
+.signup-window {
+    position: fixed;
+    display: none;
+    top: 27%;
+    left: 33%;
+}
+.signup-window-box {
+    border: solid 2px;
+    border-radius: 20px;
+    background-color: #cfd6df;
+    height: 300px;
+    width: 450px;
+    padding: 20px;
+}
+.signup-form {
+    top: 0;
+    width: 100%;
+}
+.signup-form-elements {
+    display: block;
+}
+.signup-form-elements-child {
+    border-radius: 12px;
+    font-size: 17px;
+    padding: 14px 16px;
+    width: 400px;
+    margin: 6px;
+    text-align: center;
+}
+.submit-signup-button, .submit-signup-button-inside {
+    width: 435px;
+    cursor: pointer;
+}
+.submit-signup-button-inside {
+    background-color: rgb(189, 219, 238);
+}
+.close-button {
+    display: block;
+    border-radius: 12px;
+    background-color: rgb(174, 236, 218);
+    height: 50px;
+    border: solid 1px black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.error {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    width: 100%;
+    color: red;
+    font-size: 30px;
+    text-align: center;
+}

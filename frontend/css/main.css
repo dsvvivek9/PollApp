@@ -1,0 +1,124 @@
+header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    position: sticky;
+    margin: 0px;
+    background-color: rgb(131, 149, 160);
+}
+.line-gap {
+    width: 70%;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+/* making scrollbar invisible */
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+.main-header-logo {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.26);
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    height: inherit;
+    width: fit-content;
+}
+.main-header-title {
+    font-family: Optima;
+    color: black;
+    font-size: 46px;
+    line-height: 50px;
+    margin-left: 6px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.main-header-userinfo {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+}
+.main-userinfo-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.userinfo-window {
+    position: fixed;
+    z-index: 1;
+    display: none;
+    top: 20%;
+    left: 33%;
+    border: solid 2px;
+    border-radius: 20px;
+    background-color: #cfd6df;
+    height: fit-content;
+    max-height: 500px;
+    width: 450px;
+    padding: 20px;
+}
+.userinfo-username {
+    display: block;
+    border: solid 1px;
+    border-radius: 12px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgb(156, 173, 184);
+}
+.userinfo-created-polls {
+    width: 100%;
+    height: fit-content;
+    max-height: 170px;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-top: 10px;
+}
+.userinfo-created-polls-elements {
+    display: block;
+    border: solid 1px;
+    border-radius: 12px;
+    width: 80%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    background-color: rgb(156, 173, 184);
+}
+.userinfo-inline-text {
+    display: inline-block;
+    color: black;
+    line-height: 50px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.userinfo-close-button {
+    display: block;
+    border-radius: 12px;
+    background-color: rgb(174, 236, 218);
+    height: 50px;
+    border: solid 1px black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+body {
+    background-color: #cfd6df;
+    padding: 0px;
+    margin: 0px;
+}

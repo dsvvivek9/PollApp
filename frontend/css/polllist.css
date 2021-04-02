@@ -1,0 +1,213 @@
+.main-body {
+    display: grid;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    row-gap: 10px;
+    column-gap: 10px;
+    width: 99.6%;
+    grid-template-columns: 2fr 5fr 2fr;
+    height: 92.3%;
+}
+.line-gap {
+    width: 70%;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+/* making scrollbar invisible */
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+.polllist-sidebar-main-body {
+    display: block;
+    grid-column: 1;
+    overflow-y: scroll;
+    height: 97%;
+    padding: 10px;
+}
+
+.sidebar-title {
+    display: block;
+    width: 92%;
+    height: fit-content;
+    padding: 10px;
+    text-align: center;
+    border-radius: 12px;
+    border: black solid 2px;
+    background-color: rgb(156, 173, 184);
+    cursor: pointer;
+}
+.sidebar-elements-window {
+    display: block;
+    width: 100%;
+    max-height: 580px;
+    overflow-y: scroll;
+}
+.sidebar-elements {
+    display: block;
+    width: 70%;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 7px;
+    height: fit-content;
+    border-radius: 12px;
+    border: black solid 2px;
+    background-color: lightblue;
+    text-align: center;
+    cursor: pointer;
+}
+.polllist-content-main-body {
+    display: block;
+    grid-column: 2;
+    width: 100%;
+    height: 94%;
+    padding: 20px;
+    overflow-y: scroll;
+}
+.poll-title {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    height: fit-content;
+    text-align: center;
+    border-radius: 12px;
+    border: black solid 2px;
+    background-color: rgb(156, 173, 184);
+}
+.poll-option-window {
+    overflow-y: scroll;
+    max-height: 470px;
+}
+.poll-elements {
+    display: grid;
+    width: 85%;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    height: fit-content;
+    grid-template-columns: 83% 15%;
+    column-gap: 2%;
+}
+.poll-options {
+    display: block;
+    border: black 1px solid;
+    grid-column: 1;
+    text-align: center;
+    padding: 4px;
+    border-radius: 12px;
+    border: black solid 2px;
+    background-color: lightblue;
+    cursor: pointer;
+}
+.poll-options-votes {
+    display: block;
+    border: black 1px solid;
+    height: fit-content;
+    right: 2px;
+    grid-column: 2;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    padding: 4px;
+    border-radius: 12px;
+    border: black solid 2px;
+    background-color: lightblue;
+    cursor: pointer;
+}
+.content {
+    line-height: 25px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px;
+}
+.title-content {
+    line-height: 30px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+}
+.vote-button {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    height: fit-content;
+    text-align: center;
+    border-radius: 12px;
+    border: black solid 2px;
+    background-color: rgb(174, 236, 218);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.radio-buttons {
+    display: none;
+}
+.polllist-error {
+    margin-top: 10px;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+}
+.polllist-error-text {
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    color: red;
+    font-size: 20px;
+}
+.userslist-window {
+    display: none;
+    padding: 10px;
+    background-color: #cfd6df;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    border: black solid 2px;
+    border-radius: 12px;
+    width: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+    text-align: center;
+}
+.userslist-window-close {
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    padding: 4px;
+    width: 50%;
+    border-radius: 12px;
+    border: black solid 1px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(174, 236, 218);
+}
+.userslist-elements {
+    display: inline-block;
+    text-align: center;
+    width: fit-content;
+    line-height: 30px;
+    border-radius: 6px;
+    border: black solid 1px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-inline: 6px;
+    background-color: lightblue;
+    font-size: 20px;
+}
+#selected-poll {
+    background-color: rgb(174, 236, 218);
+}
+
+#selected-option {
+    background-color: rgb(174, 236, 218);
+}

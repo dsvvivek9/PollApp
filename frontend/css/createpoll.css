@@ -1,0 +1,109 @@
+.createpoll-button {
+    display: block;
+    position: fixed;
+    bottom: 62px;
+    right: 62px;
+    border: solid black 4px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 45px;
+    text-align: center;
+    cursor: pointer;
+}
+.add-symbol {
+    vertical-align: middle;
+    font-size: 40px;
+    font-weight: bolder;
+}
+.createpoll-main-body {
+    display: none;
+    position: fixed;
+    top: 17%;
+    left: 22%;
+    border: solid 2px;
+    border-radius: 20px;
+    max-height: 500px;
+    width: 780px;
+    padding: 20px;
+    background-color: #cfd6df;
+}
+.createpoll-title {
+    width: 100%;
+}
+.createpoll-title-input {
+    display: block;
+    border-radius: 12px;
+    width: 100%;
+    border: black solid 1px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+.createpoll-options {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    max-height: 350px;
+    height: fit-content;
+}
+.createpoll-options-elements {
+    display: block;
+    border: solid 1px;
+    border-radius: 12px;
+    width: 80%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+}
+.createpoll-window-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    margin-right: 20px;
+    grid-column-gap: 10px;
+    cursor: pointer;
+}
+.createpoll-discard-changes, .createpoll-submit-button-text {
+    display: inline-block;
+    height: 40px;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    border: solid black 1px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.createpoll-discard-changes {
+    grid-column: 1;
+    background-color: rgb(253, 221, 221);
+}
+.createpoll-submit-button-text {
+    grid-column: 2;
+    background-color: lightblue;
+}
+.createpoll-error {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.createpoll-error-text {
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    color: red;
+    font-size: 20px;
+}
