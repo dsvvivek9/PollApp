@@ -53,6 +53,7 @@ function login() {
         var token = req.getResponseHeader("access-token");
         sessionStorage.setItem('token', token);
         window.location.href = "/main.html";
+        return;
     }
     var msg = document.getElementById("login-signup-error");
     msg.style="display: block;"
@@ -93,6 +94,7 @@ function signup() {
         temp.appendChild(document.createTextNode("Signup Success! please login now"));
         temp.style="color: green;";
         msg.appendChild(temp);
+        return;
     }
     var msg = document.getElementById("login-signup-error");
     msg.style="display: block;"

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"database/sql"
 	"dbfunctions"
 	"encoding/base64"
 	"fmt"
@@ -17,12 +16,6 @@ import (
 const Apppath = "/Users/akshay.dobariya/Desktop/GO-Tutorials/PollApp"
 
 func main() {
-	db, err := sql.Open("mysql", "root:@/pollapp")
-	if err != nil {
-		fmt.Println("Database connection failed: ", err.Error())
-		return
-	}
-	db.Close()
 	handleRequests()
 }
 
@@ -37,7 +30,7 @@ func handleRequests() {
 	mux.Handle("/api/getpollinfo", authenticatorMiddleware(http.HandlerFunc(getpollinfo)))
 	mux.Handle("/api/vote", authenticatorMiddleware(http.HandlerFunc(vote)))
 	mux.Handle("/api/getusers", authenticatorMiddleware(http.HandlerFunc(getusers)))
-	err := http.ListenAndServeTLS(":10000", "./TLSfiles/localhost.crt", "./TLSfiles/localhost.key", mux)
+	err := http.ListenAndServeTLS("localhost:10001", "./TLSfiles/localhost.crt", "./TLSfiles/localhost.key", mux)
 	fmt.Println(err)
 }
 

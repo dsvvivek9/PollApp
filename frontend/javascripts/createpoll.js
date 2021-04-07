@@ -169,5 +169,6 @@ function createNewPoll() {
         showError(resErr);
     } else {
         discardChanges();
+        fetchPollList();
     }
 }
