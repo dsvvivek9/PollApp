@@ -5,14 +5,36 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"login"
 	"polldata"
 
 	_ "github.com/go-sql-driver/mysql"
+	"gopkg.in/yaml.v2"
 )
 
+type dbdata struct {
+	Username string `yaml:"username"`
+	Password string `yaml:"password"`
+	DBname   string `yaml:"dbname"`
+}
+
+var dbDataInstance dbdata
+
+func SetDBdata(filename string) error {
+	yamlFile, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return errors.New("Error reading YAML file:" + err.Error())
+	}
+	err = yaml.Unmarshal(yamlFile, &dbDataInstance)
+	if err != nil {
+		return errors.New("Error parsing YAML file:" + err.Error())
+	}
+	return nil
+}
+
 func connect2PollAppDB() (db *sql.DB, err error) {
-	db, err = sql.Open("mysql", "root:@/pollapp")
+	db, err = sql.Open("mysql", dbDataInstance.Username+":"+dbDataInstance.Password+"@/"+dbDataInstance.DBname)
 	return
 }
 

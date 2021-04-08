@@ -2,8 +2,8 @@ package main
 
 import (
 	"dbfunctions"
-	"encoding/base64"
 	"fmt"
+	"jwtlocal"
 	"login"
 	"net/http"
 	"path/filepath"
@@ -16,6 +16,7 @@ import (
 const Apppath = "/Users/akshay.dobariya/Desktop/GO-Tutorials/PollApp"
 
 func main() {
+	dbfunctions.SetDBdata(Apppath + "config/Database.yaml")
 	handleRequests()
 }
 
@@ -45,27 +46,14 @@ func authenticatorMiddleware(next http.Handler) http.Handler {
 			return
 		} else {
 			token = token[6:]
-			data, err := base64.StdEncoding.DecodeString(token)
+			username, err := jwtlocal.VerifyJWTtoken(token)
 			if err != nil {
-				fmt.Println(err)
-				w.WriteHeader(500)
-				return
-			}
-			userdata := strings.Split(string(data), "\n")
-			usercreds := login.Credentials{}
-			usercreds.Setinfo(userdata[0], userdata[1])
-			ok, err := dbfunctions.VerifyUserData(usercreds)
-			if !ok {
 				fmt.Println(err)
 				w.Header().Add("error", err.Error())
 				w.WriteHeader(403)
 				return
-			} else if err != nil {
-				fmt.Println(err)
-				w.WriteHeader(500)
-				return
 			}
-			r.Header.Add("username", userdata[0])
+			r.Header.Add("username", username)
 		}
 		next.ServeHTTP(w, r)
 		fmt.Println("Exiting authenticatorMiddleware")
@@ -237,7 +225,11 @@ func userlogin(w http.ResponseWriter, r *http.Request) {
 	}
 
 	/* code to return token for future api requests */
-	data := temp_u + "\n" + temp_p + "\n"
-	token := base64.StdEncoding.EncodeToString([]byte(data))
+	token, err := jwtlocal.SetJWTtoken(temp_u)
+	if err != nil {
+		fmt.Println(err)
+		w.WriteHeader(500)
+		return
+	}
 	w.Header().Add("access-token", token)
 }
