@@ -16,7 +16,11 @@ import (
 const Apppath = "/Users/akshay.dobariya/Desktop/GO-Tutorials/PollApp"
 
 func main() {
-	dbfunctions.SetDBdata(Apppath + "config/Database.yaml")
+	err := dbfunctions.SetDBdata(Apppath + "/config/Database.yaml")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	handleRequests()
 }
 

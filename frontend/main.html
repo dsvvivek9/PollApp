@@ -5,10 +5,14 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/createpoll.css">
     <link rel="stylesheet" href="./css/polllist.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16.4.1/umd/react-dom-server.browser.development.js" crossorigin></script>
     <script src="./javascripts/getuserinfo.js"></script>
     <script src="./javascripts/loginandsignup.js"></script>
     <script src="./javascripts/createpoll.js"></script>
     <script src="./javascripts/extractpolllist.js"></script>
+    <script src="./javascripts/createpoll_react.js"></script>
 </head>
 <body>
     <!-- if user is not logged in redirect him/her to login page -->
@@ -86,22 +90,9 @@
     </div>
     <!-- code for createpoll popup -->
     <div class="createpoll-main-body" id="createpoll-main-body">
-        <div class="createpoll-title">
-            <input class="createpoll-title-input" type="text" id="polltitle" placeholder="what is your poll title?"></input>
-        </div>
-        <div class="createpoll-options" id="createpoll-options">
-            <input class="createpoll-options-elements" onclick="addOrRemoveOptions();" placeholder="Type here options you want to add!"></input>
-            <input class="createpoll-options-elements" onclick="addOrRemoveOptions();" placeholder="Type here options you want to add!"></input>
-        </div>
-        <div class="line-gap">
-            <hr>
-        </div>
-        <div class="createpoll-window-buttons">
-            <span class="createpoll-discard-changes" onclick="discardChanges();">Discard</span>
-            <span class="createpoll-submit-button-text" onclick="createNewPoll();">Create Poll</span>
-        </div>
-        <div class="createpoll-error" id="createpoll-error">
-        </div>
     </div>
+    <script>
+        createpollcall();
+    </script>
 </body>
 </html>
