@@ -38,7 +38,7 @@ body {
     grid-column: 2;
     padding: 70px 50px;
 }
-.home-body-right-box {
+.login-window-box {
     border: solid 2px;
     border-radius: 20px;
     height: 300px;
@@ -60,18 +60,18 @@ body {
     margin: 6px;
     text-align: center;
 }
-.submit-button, .submit-button-inside {
+.submit-button, .submit-button-child {
     width: 435px;
     cursor: pointer;
 }
-.submit-button-inside {
+.submit-button-child {
     background-color: rgb(189, 219, 238);
 }
 .line-gap {
     padding-left: 75px;
     padding-right: 75px;
 }
-.signup-button {
+.my-action-button {
     display: block;
     border-radius: 12px;
     background-color: rgb(174, 236, 218);
@@ -92,12 +92,12 @@ body {
 
 /* signup window configurations */
 .signup-window {
-    position: fixed;
     display: none;
-    top: 27%;
-    left: 33%;
 }
 .signup-window-box {
+    position: fixed;
+    top: 27%;
+    left: 33%;
     border: solid 2px;
     border-radius: 20px;
     background-color: #cfd6df;
@@ -120,24 +120,7 @@ body {
     margin: 6px;
     text-align: center;
 }
-.submit-signup-button, .submit-signup-button-inside {
-    width: 435px;
-    cursor: pointer;
-}
-.submit-signup-button-inside {
-    background-color: rgb(189, 219, 238);
-}
-.close-button {
-    display: block;
-    border-radius: 12px;
-    background-color: rgb(174, 236, 218);
-    height: 50px;
-    border: solid 1px black;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
+
 .error {
     display: none;
     position: fixed;

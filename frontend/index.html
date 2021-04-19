@@ -4,50 +4,26 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/login.css">
     <script src="./javascripts/loginandsignup.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="./javascripts/loginandsignup_react.js"></script>
 </head>
 <body>
     <div class="home-body" id="home-body">
+        <div id="react-elems"></div>
         <div class="home-body-left">
             <div class="home-body-title">PöLLAPP</div>
             <div class="home-body-description">Onestop solution to create poll and analyse polldata!</div>
         </div>
-        <div class="home-body-right">
-            <div class="home-body-right-box">
-                <div class="login-form">
-                    <div class="login-form-elements">
-                        <input class="login-form-elements-child" type="text" name="username" id="username" placeholder="username" required="required"></input>
-                    </div>
-                    <div class="login-form-elements">
-                        <input class="login-form-elements-child" type="password" name="password" id="password" placeholder="password" required="required"></input>
-                    </div>
-                    <div class="login-form-elements submit-button">
-                        <input class="login-form-elements-child submit-button-inside" type="submit" value="Login" onclick="login();"></input>
-                    </div>
-                </div>
-                <div class="line-gap">
-                    <hr>
-                </div>
-                <div>
-                    <a href="#" onclick="opensignupwindow()"><div class="signup-button"><span class="inline-text">Create New Account</span></div></a>
-                </div>
-            </div>
-        </div>
+        <div class="home-body-right" id="home-body-right"></div>
+        <script>
+            ReactLoginSignup({type: "login"});
+        </script>
     </div>
-    <div class="signup-window" id="signup-window">
-        <div class="signup-window-box">
-            <div class="signup-form">
-                <div class="signup-form-elements"><input class="signup-form-elements-child" type="text" name="username" id="newusername" placeholder="username" required="required"></input></div>
-                <div class="signup-form-elements"><input class="signup-form-elements-child" type="password" name="password" id="newpassword" placeholder="password"></input></div>
-                <div class="signup-form-elements submit-signup-button"><input class="signup-form-elements-child submit-signup-button-inside" type="submit" value="signup" required="required" onclick="signup();"></input></div>
-            </div>
-            <div class="line-gap">
-                <hr>
-            </div>
-            <div>
-                <a href="#" onclick="closesignupwindow()"><div class="close-button"><span class="inline-text">Close</span></div></a>
-            </div>
-        </div>
-    </div>
+    <div class="signup-window" id="signup-window"></div>
+    <script>
+        ReactLoginSignup({type: "signup"});
+    </script>
     <div class="error" id="login-signup-error">
     </div>
 </body>
